@@ -21,7 +21,7 @@
                 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <!-- Logo dyal la salle -->
-            <a class="navbar-brand text-light" href="#">
+            <a class="navbar-brand text-light" href="index.jsp">
     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-barbell" viewBox="0 0 16 16">
         <path d="M2 5h1v6H2V5Zm11 0h1v6h-1V5ZM4.5 4a.5.5 0 0 0-.5.5v1h-1v5h1v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5V4.5a.5.5 0 0 0-.5-.5h-1Zm6 0a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1h1v-5h-1v-1a.5.5 0 0 0-.5-.5h-1ZM7 3.5A.5.5 0 0 1 7.5 3h1a.5.5 0 0 1 .5.5V6h1v4h-1v2.5a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5V10h-1V6h1V3.5Z"/>
     </svg>
@@ -47,6 +47,42 @@
             </div>
         </div>
     </nav>
+    
+    
+    
+    <!-- &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& -->
+    
+    <div class="container d-flex justify-content-center align-items-center vh-100">
+        <div class="col-md-4">
+            <div class="card shadow-lg p-4">
+                <div class="card-body">
+                    <h3 class="text-center mb-4">Login</h3>
+
+                    <form action="" method="post">
+                        <div class="mb-3">
+                            <label class="form-label">Email address</label>
+                            <input required name="email" type="email" class="form-control" placeholder="Entrer votre email">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Password</label>
+                            <input required name="password" type="password" class="form-control" placeholder="Entrer votre mot de passe">
+                        </div>
+                      <button type="submit" class="btn btn-outline-light w-100">Se connecter</button>
+                    </form>
+
+                   <div class="text-center mt-3" style="white-space: nowrap;">
+                 <span>Vous n'avez pas de compte ? </span>
+             <a href="register.jsp" class="text-decoration-none">Créez-en un</a>
+            </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
 
     <!-- Bootstrap JS (for responsive menu) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
