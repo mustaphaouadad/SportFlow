@@ -6,6 +6,6 @@ public class Userdao {
 	private Connection coon;
 	
 	
-	public 
+
 
 }
