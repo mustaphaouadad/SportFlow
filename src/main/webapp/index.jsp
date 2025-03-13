@@ -58,7 +58,7 @@
                 <div class="card-body">
                     <h3 class="text-center mb-4">Login</h3>
 
-                    <form action="" method="post">
+                    <form action="Login" method="post">
                         <div class="mb-3">
                             <label class="form-label">Email address</label>
                             <input required name="email" type="email" class="form-control" placeholder="Entrer votre email">
