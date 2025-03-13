@@ -47,7 +47,7 @@
             <div class="card shadow-lg p-4">
                 <div class="card-body">
             <h2 class="text-2xl font-bold text-center mb-4">Inscription</h2>
-            <form action="register" method="post">
+             <form action="Userregister" method="post">
                 <!-- Full Name -->
                 <div class="mb-3">
                     <input type="text" name="fullname" class="form-control" placeholder="Nom Complet" required>
@@ -89,29 +89,44 @@
 
                 <!-- Submit Button -->
                <button type="submit" class="btn btn-outline-light w-100">S'inscrire</button>
-            </form>
+           </form>
         </div>
      </div>
       </div>
        </div>
 
     <!-- JS to Toggle Fields Based on Role -->
-    <script>
-        function toggleFields() {
-            let role = document.getElementById("role").value;
+   <script>
+    function toggleFields() {
+        let role = document.getElementById("role").value;
+        let memberFields = document.getElementById("memberFields");
+        let coachFields = document.getElementById("coachFields");
 
-            // Hide both Member and Coach specific fields initially
-            document.getElementById("memberFields").classList.add("d-none");
-            document.getElementById("coachFields").classList.add("d-none");
+        // إخفاء الحقول أولاً
+        memberFields.classList.add("d-none");
+        coachFields.classList.add("d-none");
 
-            // Show fields based on the selected role
-            if (role === "member") {
-                document.getElementById("memberFields").classList.remove("d-none");
-            } else if (role === "coach") {
-                document.getElementById("coachFields").classList.remove("d-none");
-            }
+        // إزالة required من جميع الحقول الخاصة بالـ member و coach
+        document.querySelectorAll("#memberFields input, #coachFields input").forEach(input => {
+            input.removeAttribute("required");
+        });
+
+        // إظهار الحقول المناسبة وإضافة required فقط للحقول الظاهرة
+        if (role === "member") {
+            memberFields.classList.remove("d-none");
+            memberFields.querySelectorAll("input").forEach(input => input.setAttribute("required", "required"));
+        } else if (role === "coach") {
+            coachFields.classList.remove("d-none");
+            coachFields.querySelectorAll("input").forEach(input => input.setAttribute("required", "required"));
         }
-    </script>
+    }
+
+    // تشغيل الوظيفة عند تحميل الصفحة في حالة إعادة تحميل الصفحة مع اختيار محفوظ
+    document.addEventListener("DOMContentLoaded", function () {
+        toggleFields();
+    });
+</script>
+
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
