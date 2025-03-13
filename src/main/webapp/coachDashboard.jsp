@@ -8,5 +8,6 @@
 </head>
 <body>
 <h1>coach</h1>
+<a href="Logout">Logout</a>
 </body>
 </html>
