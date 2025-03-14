@@ -1,12 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.util.List" %>
-<%@ page import="dao.Userdao" %> 
+<%@ page import="dao.Coachdao" %> 
 <%@ page import="dao.DBConnect" %>
 <%@ page import="model.Seance" %>
+<%@ page import="java.sql.Connection" %>
 
 <%
 int idCoach = (int) session.getAttribute("idUser"); // جلب ID المدرب
-Userdao seanceDao = new Userdao(DBConnect.getCoon()); // Hna kanst3mlo Userdao
+Coachdao seanceDao = new Coachdao(DBConnect.getCoon()); // Hna kanst3mlo Userdao
 List<Seance> seances = seanceDao.getSeancesByCoach(idCoach);
 %>
 

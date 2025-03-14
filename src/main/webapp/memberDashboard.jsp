@@ -1,11 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.util.List" %>
-<%@ page import="dao.Userdao" %>
+<%@ page import="dao.Coachdao" %>
 <%@ page import="dao.DBConnect" %>
 <%@ page import="model.Coach" %>
+<%@ page import="java.sql.Connection" %>
 
 <%
-    Userdao dao = new Userdao(DBConnect.getCoon());
+    Coachdao dao = new Coachdao(DBConnect.getCoon());
     List<Coach> coachList = dao.getAllCoaches();
 %>
 
