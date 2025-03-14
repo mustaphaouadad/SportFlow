@@ -19,7 +19,7 @@ public class SeanceServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		 try {
 	            HttpSession session = request.getSession();
-	            int idMem = (int) session.getAttribute("idUser"); // ID ديال الميمبر
+	            int idMem = (int) session.getAttribute("idUser"); 	
 	            String dateSeance = request.getParameter("dateSeance");
 	            String heure = request.getParameter("heure");
 	            int idCoach = Integer.parseInt(request.getParameter("idCoach"));

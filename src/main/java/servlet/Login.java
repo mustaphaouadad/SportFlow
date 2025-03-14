@@ -47,7 +47,7 @@ public class Login extends HttpServlet {
 	            response.sendRedirect("unknownRole.jsp");    
 	        }
 	    } else {
-	        response.sendRedirect("login.jsp?error=invalid");   
+	        response.sendRedirect("index.jsp?error=invalid");   
 	    }
 	}
 

@@ -4,9 +4,17 @@ public class Coach {
 	
 	private int idCoach;
 	private String speciality;
+	private String fullName;
 	
 	
 	
+	
+	public String getFullName() {
+		return fullName;
+	}
+	public void setFullName(String fullName) {
+		this.fullName = fullName;
+	}
 	
 	public Coach() {
 		super();

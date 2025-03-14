@@ -32,7 +32,8 @@
             <%
                 for (Coach c : coachList) {
             %>
-                <option value="<%= c.getIdCoach() %>"><%= c.getSpeciality() %></option>
+                <option value="<%= c.getIdCoach() %>">
+                <%= c.getSpeciality() %> - <%= c.getFullName() %></option>
             <%
                 }
             %>
