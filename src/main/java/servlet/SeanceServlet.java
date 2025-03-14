@@ -34,7 +34,7 @@ public class SeanceServlet extends HttpServlet {
 
 	            int i = pst.executeUpdate();
 	            if (i > 0) {
-	                response.sendRedirect("coachDashboard.jsp"); // توجيه إلى صفحة المدرب
+	                response.sendRedirect("memberDashboard.jsp"); // توجيه إلى صفحة المدرب
 	            } else {
 	                response.sendRedirect("memberDashboard.jsp?error=insert_failed");
 	            }
