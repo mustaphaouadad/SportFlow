@@ -99,9 +99,36 @@ public class Userdao {
 	  }
 	  
 	  
+	  
+	// Récupérer tous les membres
+	  
+	  public List<Member> getAllMembers(){
+		  List<Member> members = new ArrayList<>();
+		  String sql = "SELECT u.fullName, u.email, m.sportPratique FROM Users u JOIN Members m ON u.idUser = m.idMem";
+		  try {
+			  PreparedStatement pst = coon.prepareStatement(sql);
+		        ResultSet rs = pst.executeQuery();
+		        while (rs.next()) {
+		        	Member member = new Member();
+		        	  member.setFullName(rs.getString("fullName"));
+		              member.setEmail(rs.getString("email"));
+		              member.setSportPratique(rs.getString("sportPratique"));
+		              members.add(member);
+					
+				}
+			  
+			
+		} catch (Exception e) {
+			 e.printStackTrace();
+		}
+		  
+		  return members;
+	  }
+	  
+	  
 	  public List<Coach> getAllCoaches() {
 		    List<Coach> coaches = new ArrayList<>();
-		    String sql = "SELECT idCoach, fullName, speciality FROM Users INNER JOIN Coachs ON Users.idUser = Coachs.idCoach";
+		    String sql = "SELECT idCoach, fullName,email, speciality FROM Users INNER JOIN Coachs ON Users.idUser = Coachs.idCoach";
 		    try {
 		        PreparedStatement pst = coon.prepareStatement(sql);
 		        ResultSet rs = pst.executeQuery();
@@ -110,6 +137,7 @@ public class Userdao {
 		            c.setIdCoach(rs.getInt("idCoach"));
 		            c.setSpeciality(rs.getString("speciality"));
 		            c.setFullName(rs.getString("fullName"));
+		            c.setEmail(rs.getString("email"));
 		           
 		            coaches.add(c);
 		        }

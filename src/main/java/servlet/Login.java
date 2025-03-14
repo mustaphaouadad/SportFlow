@@ -38,8 +38,11 @@ public class Login extends HttpServlet {
 	        session.setAttribute("idUser", user.getIdUser());
 	        session.setAttribute("fullName", user.getFullName());
 	        session.setAttribute("role", user.getRole());
-
-	        if ("member".equalsIgnoreCase(user.getRole())) {
+            
+	        
+	        if ("admin".equalsIgnoreCase(user.getRole())) {
+	            response.sendRedirect("adminDashboard.jsp");
+	        }else if ("member".equalsIgnoreCase(user.getRole())) {
 	            response.sendRedirect("memberDashboard.jsp"); 
 	        } else if ("coach".equalsIgnoreCase(user.getRole())) {
 	            response.sendRedirect("coachDashboard.jsp"); 	        
