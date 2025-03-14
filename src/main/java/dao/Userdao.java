@@ -101,6 +101,26 @@ public class Userdao {
 	  }
 	  
 	  
+	  public List<Coach> getAllCoaches() {
+		    List<Coach> coaches = new ArrayList<>();
+		    String sql = "SELECT idCoach, speciality FROM Coachs";
+		    try {
+		        PreparedStatement pst = coon.prepareStatement(sql);
+		        ResultSet rs = pst.executeQuery();
+		        while (rs.next()) {
+		            Coach c = new Coach();
+		            c.setIdCoach(rs.getInt("idCoach"));
+		            c.setSpeciality(rs.getString("speciality"));
+		            coaches.add(c);
+		        }
+		    } catch (Exception e) {
+		        e.printStackTrace();
+		    }
+		    return coaches;
+		}
+
+	  
+	  
 	  public List<Seance> getSeancesByCoach(int idCoach) {
 	        List<Seance> seances = new ArrayList<>();
 	        String sql = "SELECT s.dateSeance, s.heure, u.fullName AS memberName FROM SeanceDentraînement s JOIN Users u ON s.idMem = u.idUser WHERE s.idCoach = ?";
