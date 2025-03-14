@@ -48,7 +48,7 @@ public class Userregister extends HttpServlet {
 	        Member m = null;
 	        Coach c = null;
 
-	        // إذا كان المستخدم عضوًا (Membre)، قم بجلب تاريخ الميلاد والرياضة
+	 
 	        if ("member".equalsIgnoreCase(role)) {
 	            String dateNaissance = request.getParameter("dateNaissance");
 	            String sportPratique = request.getParameter("sportPratique");
@@ -60,7 +60,6 @@ public class Userregister extends HttpServlet {
 	            }
 	        }
 
-	        // إذا كان المستخدم مدربًا (Coach)، قم بجلب التخصص
 	        if ("coach".equalsIgnoreCase(role)) {
 	            String speciality = request.getParameter("speciality");
 

@@ -102,16 +102,13 @@
         let memberFields = document.getElementById("memberFields");
         let coachFields = document.getElementById("coachFields");
 
-        // إخفاء الحقول أولاً
         memberFields.classList.add("d-none");
         coachFields.classList.add("d-none");
 
-        // إزالة required من جميع الحقول الخاصة بالـ member و coach
         document.querySelectorAll("#memberFields input, #coachFields input").forEach(input => {
             input.removeAttribute("required");
         });
 
-        // إظهار الحقول المناسبة وإضافة required فقط للحقول الظاهرة
         if (role === "member") {
             memberFields.classList.remove("d-none");
             memberFields.querySelectorAll("input").forEach(input => input.setAttribute("required", "required"));
@@ -121,7 +118,6 @@
         }
     }
 
-    // تشغيل الوظيفة عند تحميل الصفحة في حالة إعادة تحميل الصفحة مع اختيار محفوظ
     document.addEventListener("DOMContentLoaded", function () {
         toggleFields();
     });

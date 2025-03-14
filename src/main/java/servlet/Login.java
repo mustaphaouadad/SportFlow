@@ -39,16 +39,15 @@ public class Login extends HttpServlet {
 	        session.setAttribute("fullName", user.getFullName());
 	        session.setAttribute("role", user.getRole());
 
-	        // توجيه حسب الدور
 	        if ("member".equalsIgnoreCase(user.getRole())) {
-	            response.sendRedirect("memberDashboard.jsp"); // التحويل إلى صفحة الأعضاء
+	            response.sendRedirect("memberDashboard.jsp"); 
 	        } else if ("coach".equalsIgnoreCase(user.getRole())) {
-	            response.sendRedirect("coachDashboard.jsp"); // التحويل إلى صفحة المدربين
-	        } else {
-	            response.sendRedirect("unknownRole.jsp"); // إذا كان هناك دور غير معروف
+	            response.sendRedirect("coachDashboard.jsp"); 	        
+	            } else {
+	            response.sendRedirect("unknownRole.jsp");    
 	        }
 	    } else {
-	        response.sendRedirect("login.jsp?error=invalid"); // إعادة توجيه مع رسالة خطأ
+	        response.sendRedirect("login.jsp?error=invalid");   
 	    }
 	}
 
