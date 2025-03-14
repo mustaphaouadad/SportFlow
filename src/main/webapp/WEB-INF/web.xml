@@ -4,6 +4,16 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>SeanceServlet</servlet-name>
+  	<display-name>SeanceServlet</display-name>
+  	<description></description>
+  	<servlet-class>servlet.SeanceServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>SeanceServlet</servlet-name>
+  	<url-pattern>/SeanceServlet</url-pattern>
+  </servlet-mapping>
   
   
  
