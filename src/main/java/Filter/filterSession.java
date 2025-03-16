@@ -14,7 +14,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 
-@WebFilter({"/coachDashboard.jsp" , "/memberDashboard.jsp"})
+@WebFilter({"/coachDashboard.jsp" , "/memberDashboard.jsp" , "/adminDashboard.jsp"})
 public class filterSession extends HttpFilter implements Filter {
 
  
@@ -31,7 +31,7 @@ public class filterSession extends HttpFilter implements Filter {
 		HttpServletResponse resp = (HttpServletResponse) response;
 		HttpSession session = req.getSession(false);
 		if(session == null) {
-			resp.sendRedirect("index.jsp?error=session");
+			resp.sendRedirect("Login.jsp?error=session");
 			return;
 		}
 		
@@ -39,7 +39,7 @@ public class filterSession extends HttpFilter implements Filter {
 		Object role = session.getAttribute("role");
 		
 		if(userId == null) {
-			resp.sendRedirect("index.jsp?error=session");
+			resp.sendRedirect("Login.jsp?error=session");
 			return;
 		}
 		

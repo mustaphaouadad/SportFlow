@@ -74,7 +74,7 @@ public class Userregister extends HttpServlet {
 
 	        HttpSession session = request.getSession();
 	        if (f) {
-	            response.sendRedirect("index.jsp");
+	            response.sendRedirect("Login.jsp");
 	        } else {
 	            response.sendRedirect("register.jsp");
 	        }

@@ -50,7 +50,7 @@ public class Login extends HttpServlet {
 	            response.sendRedirect("unknownRole.jsp");    
 	        }
 	    } else {
-	        response.sendRedirect("index.jsp?error=invalid");   
+	        response.sendRedirect("Login.jsp?error=invalid");   
 	    }
 	}
 

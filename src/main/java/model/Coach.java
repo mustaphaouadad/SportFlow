@@ -28,15 +28,24 @@ public class Coach {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Coach(String speciality) {
+	
+	
+		public Coach(String speciality, String fullName, String email) {
 		super();
 		this.speciality = speciality;
+		this.fullName = fullName;
+		this.email = email;
 	}
-	public Coach(int idCoach, String speciality) {
-		super();
-		this.idCoach = idCoach;
-		this.speciality = speciality;
-	}
+
+	
+	public Coach(int idCoach, String speciality, String fullName, String email) {
+			super();
+			this.idCoach = idCoach;
+			this.speciality = speciality;
+			this.fullName = fullName;
+			this.email = email;
+		}
+
 	//----------------------
 	public int getIdCoach() {
 		return idCoach;

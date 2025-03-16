@@ -31,7 +31,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.jsp">Login</a>
+                        <a class="nav-link" href="Login.jsp">Login</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="register.jsp">Registration</a>
@@ -73,6 +73,7 @@
                 <!-- Member Specific Fields -->
                 <div id="memberFields" class="d-none">
                     <div class="mb-3">
+                    <label for="dateNaissance">Date de naissance</label>
                         <input type="date" name="dateNaissance" class="form-control" placeholder="Date de naissance" required>
                     </div>
                     <div class="mb-3">
@@ -88,7 +89,8 @@
                 </div>
 
                 <!-- Submit Button -->
-               <button type="submit" class="btn btn-outline-light w-100">S'inscrire</button>
+              <button type="submit" class="btn btn-outline-dark w-100">Se connecter</button>
+
            </form>
         </div>
      </div>

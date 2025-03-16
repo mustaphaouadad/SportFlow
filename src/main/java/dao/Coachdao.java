@@ -1,6 +1,7 @@
 package dao;
 
 import java.sql.Connection;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -28,7 +29,7 @@ public class Coachdao {
 	
 	  public List<Coach> getAllCoaches() {
 		    List<Coach> coaches = new ArrayList<>();
-		    String sql = "SELECT idCoach, fullName, speciality FROM Users INNER JOIN Coachs ON Users.idUser = Coachs.idCoach";
+		    String sql = "SELECT u.idUser AS idCoach, u.fullName, u.email, c.speciality FROM Users u JOIN Coachs c ON u.idUser = c.idCoach";
 		    try {
 		        PreparedStatement pst = coon.prepareStatement(sql);
 		        ResultSet rs = pst.executeQuery();
@@ -36,6 +37,7 @@ public class Coachdao {
 		            Coach c = new Coach();
 		            c.setIdCoach(rs.getInt("idCoach"));
 		            c.setSpeciality(rs.getString("speciality"));
+		            c.setEmail(rs.getString("email"));
 		            c.setFullName(rs.getString("fullName"));
 		           
 		            coaches.add(c);
@@ -67,6 +69,11 @@ public class Coachdao {
 	        }
 	        return seances;
 	    }
+	  
+	  
+	  
+	  
+
 
 
 }

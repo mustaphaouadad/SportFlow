@@ -35,17 +35,26 @@ public class Member {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Member(Date dateOfBirth, String sportPratique) {
+	
+	
+	public Member(Date dateOfBirth, String sportPratique, String fullName, String email) {
 		super();
 		this.dateOfBirth = dateOfBirth;
 		this.sportPratique = sportPratique;
+		this.fullName = fullName;
+		this.email = email;
 	}
-	public Member(int idMem, Date dateOfBirth, String sportPratique) {
+
+
+	public Member(int idMem, Date dateOfBirth, String sportPratique, String fullName, String email) {
 		super();
 		this.idMem = idMem;
 		this.dateOfBirth = dateOfBirth;
 		this.sportPratique = sportPratique;
+		this.fullName = fullName;
+		this.email = email;
 	}
+
 	//-------------------------------------
 	public int getIdMem() {
 		return idMem;
